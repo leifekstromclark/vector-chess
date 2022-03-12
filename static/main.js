@@ -9,7 +9,7 @@ const renderer = new PIXI.Renderer({
     view: canvas,
     resolution: window.devicePixelRatio,
     autoDensity: true,
-    backgroundColor: 0x606060
+    backgroundColor: 0xFFFFFF
 })
 resize();
 window.addEventListener('resize', resize);
@@ -60,8 +60,8 @@ for (let i = 0; i < 6; i++) {
     let x = 0;
     let y = 0;
     while (x == 0 && y == 0) {
-        x = Math.floor(Math.random() * 3);
-        y = Math.floor(Math.random() * 3);
+        x = Math.floor(Math.random() * 7) - 3;
+        y = Math.floor(Math.random() * 7) - 3;
     }
     new Card(new Vector(x, y), Math.floor(i / 2), i % 2);
 }
@@ -87,6 +87,8 @@ selects[0].drawRoundedRect(-125, -165, 250, 330, 55);
 selects[1].drawRoundedRect(-125, -165, 250, 330, 55);
 selects[0].position.set(card_positions[0].x, card_positions[0].y);
 selects[1].position.set(card_positions[1].x, card_positions[1].y);
+selects[0].visible = false;
+selects[1].visible = false;
 stage.addChild(selects[0]);
 stage.addChild(selects[1]);
 
