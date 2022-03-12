@@ -1,5 +1,3 @@
-const ASPECT = [4, 3];
-
 function horizBound() {
     if (canvas.parentElement.clientHeight / ASPECT[1] * ASPECT[0] > canvas.parentElement.clientWidth) {
         return true;
